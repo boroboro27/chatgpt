@@ -13,7 +13,7 @@ filelink = 'https://storage.yandexcloud.net/speechkit/speech.ogg'
 
 POST = "https://transcribe.api.cloud.yandex.net/speech/stt/v2/longRunningRecognize"
 
-body ={
+body = {
     "config": {
         "specification": {
             "languageCode": "ru-RU"
@@ -42,7 +42,8 @@ while True:
     req = requests.get(GET.format(id=id), headers=header)
     req = req.json()
 
-    if req['done']: break
+    if req['done']:
+        break
     print("Not ready")
 
 # Показать полный ответ сервера в формате JSON.

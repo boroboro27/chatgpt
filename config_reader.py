@@ -4,7 +4,10 @@ from pydantic import BaseSettings, SecretStr
 class Settings(BaseSettings):
     # Желательно вместо str использовать SecretStr 
     # для конфиденциальных данных, например, токена бота
-    bot_token: SecretStr
+    openai_key: SecretStr
+    tg_token: SecretStr
+    assaemblyai_key: SecretStr
+    yandex_aim: SecretStr
 
     # Вложенный класс с дополнительными указаниями для настроек
     class Config:
